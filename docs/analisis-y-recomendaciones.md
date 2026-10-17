@@ -138,6 +138,55 @@ Cambios al modelo de datos que esto implica:
 
 Requerimientos nuevos: sesión de pendientes del día, responder antes de ver la respuesta, límite de fichas nuevas y exportar e importar. También hay una pregunta nueva: ¿la escala de 1 a 5 se mantiene o se pasa a cuatro botones, como Anki?
 
+## Propuestas de mejora
+
+Las apps revisadas compiten en algoritmo o en contenido; estas ocho propuestas buscan que la nuestra se distinga por cómo acompaña al estudiante. Las de menor esfuerzo podrían entrar al MVP sin retrasarlo.
+
+| Propuesta | Impacto | Esfuerzo | Fase sugerida |
+| --- | --- | --- | --- |
+| Estaciones de 5 minutos | Alto | Bajo | MVP |
+| Pistas progresivas | Medio | Bajo | MVP |
+| Panel de comparación del reto | Medio | Bajo | MVP (script del repo, no parte de la app) |
+| Calibración de confianza | Alto | Medio | v2 |
+| Fecha de examen por categoría | Alto | Medio | v2 |
+| Mazos compartidos por enlace o QR | Medio | Medio | v2 |
+| Fichas desde una foto del cuaderno | Alto | Alto | Después |
+| Fichas que se confunden | Medio | Alto | Después |
+
+Impacto y esfuerzo son estimaciones para discutir, no mediciones.
+
+### 1. Estaciones de 5 minutos
+
+Las apps de fichas suelen medir la sesión en número de fichas; un niño la vive en minutos. Propuesta: una sesión por defecto de 5 minutos, con un cierre claro al terminar y la opción de hacer otra estación. Es la misma lógica de estaciones cortas del método MAPA, y la cantidad de fichas se ajusta sola al ritmo del estudiante.
+
+### 2. Pistas progresivas
+
+Antes de mostrar la respuesta, el estudiante puede pedir una pista: la primera letra, una imagen o un campo adicional de la ficha (ya previsto en REQ-015). Usar pista limita la calificación máxima a "Bien". Reduce la frustración de quedarse en blanco sin regalar la respuesta.
+
+### 3. Calibración de confianza
+
+La autocalificación de 1 a 5 (como en Brainscape) depende de que el estudiante se juzgue bien. Propuesta: en algunas fichas, comparar la respuesta escrita con la correcta y mostrar, por categoría, si el estudiante se califica más alto o más bajo de lo que acierta. Enseña a conocerse como aprendiz, que es el núcleo de aprender a aprender.
+
+### 4. Fecha de examen por categoría
+
+El estudiante marca que tiene examen de una categoría en una fecha. La app adelanta los repasos de esas fichas para que todas pasen al menos una vez por la sesión de pendientes antes del examen. Responde a la necesidad real de un estudiante de colegio, que no estudia para "siempre" sino para el viernes.
+
+### 5. Fichas desde una foto del cuaderno
+
+El adulto toma una foto de una página del cuaderno o del libro y la IA propone fichas de pregunta y respuesta, que el adulto revisa antes de guardarlas. Ataca el mayor costo de cualquier app de fichas: crearlas. Es la propuesta más cara, porque depende de un servicio de IA y de una pantalla de revisión.
+
+### 6. Mazos compartidos por enlace o código QR
+
+Un adulto o un profesor arma un mazo y lo comparte con un enlace o un QR; otro dispositivo lo importa en un toque. Se construye sobre el formato común de exportación del issue #6 y permite que un salón use el mismo mazo.
+
+### 7. Fichas que se confunden
+
+Si dos fichas suelen fallarse juntas (por ejemplo, dos capitales parecidas o dos fórmulas), la app lo detecta en el historial y propone una ficha de contraste: "¿en qué se diferencian?". Requiere meses de historial, así que es para después.
+
+### 8. Panel de comparación del reto
+
+Para el experimento entre Jorge y Sergio: con el mismo mazo y el formato común, cada implementación exporta su historial y un script en el repo compara retención, número de repasos y tiempo por sesión. Convierte el reto en datos y sirve como caso para la tesis.
+
 ## Fuentes
 
 - [Anki: qué algoritmo de repetición usa (SM-2 y FSRS)](https://docs.ankiweb.net/faqs/what-spaced-repetition-algorithm.md)
