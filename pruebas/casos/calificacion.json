@@ -1,0 +1,64 @@
+{
+  "id": "CAL",
+  "titulo": "Traducción de calificaciones a FSRS",
+  "estado": "propuesta",
+  "issue": 2,
+  "requerimientos": ["REQ-016", "REQ-017", "REQ-026"],
+  "nota": "Valores de calificacion_fsrs: otra_vez, dificil, bien, facil. Propuesta del issue #2; cambia si se decide otra traducción.",
+  "casos": [
+    {
+      "id": "CAL-001",
+      "descripcion": "Escala 1 a 5: un 1 es Otra vez",
+      "entrada": { "tipo_calificacion": "escala_1_5", "calificacion": 1, "tiempo_agotado": false },
+      "esperado": { "calificacion_fsrs": "otra_vez" }
+    },
+    {
+      "id": "CAL-002",
+      "descripcion": "Escala 1 a 5: un 2 es Difícil",
+      "entrada": { "tipo_calificacion": "escala_1_5", "calificacion": 2, "tiempo_agotado": false },
+      "esperado": { "calificacion_fsrs": "dificil" }
+    },
+    {
+      "id": "CAL-003",
+      "descripcion": "Escala 1 a 5: un 3 es Bien",
+      "entrada": { "tipo_calificacion": "escala_1_5", "calificacion": 3, "tiempo_agotado": false },
+      "esperado": { "calificacion_fsrs": "bien" }
+    },
+    {
+      "id": "CAL-004",
+      "descripcion": "Escala 1 a 5: un 4 también es Bien",
+      "entrada": { "tipo_calificacion": "escala_1_5", "calificacion": 4, "tiempo_agotado": false },
+      "esperado": { "calificacion_fsrs": "bien" }
+    },
+    {
+      "id": "CAL-005",
+      "descripcion": "Escala 1 a 5: un 5 es Fácil",
+      "entrada": { "tipo_calificacion": "escala_1_5", "calificacion": 5, "tiempo_agotado": false },
+      "esperado": { "calificacion_fsrs": "facil" }
+    },
+    {
+      "id": "CAL-006",
+      "descripcion": "Pasa / No pasa: No pasa es Otra vez",
+      "entrada": { "tipo_calificacion": "pasa_no_pasa", "calificacion": "no_pasa", "tiempo_agotado": false },
+      "esperado": { "calificacion_fsrs": "otra_vez" }
+    },
+    {
+      "id": "CAL-007",
+      "descripcion": "Pasa / No pasa: Pasa es Bien",
+      "entrada": { "tipo_calificacion": "pasa_no_pasa", "calificacion": "pasa", "tiempo_agotado": false },
+      "esperado": { "calificacion_fsrs": "bien" }
+    },
+    {
+      "id": "CAL-008",
+      "descripcion": "Tiempo agotado cuenta como Otra vez aunque la autocalificación sea alta",
+      "entrada": { "tipo_calificacion": "escala_1_5", "calificacion": 5, "tiempo_agotado": true },
+      "esperado": { "calificacion_fsrs": "otra_vez" }
+    },
+    {
+      "id": "CAL-009",
+      "descripcion": "Escala 1 a 5: un valor fuera de rango es un error",
+      "entrada": { "tipo_calificacion": "escala_1_5", "calificacion": 6, "tiempo_agotado": false },
+      "esperado": { "error": "calificacion_invalida" }
+    }
+  ]
+}

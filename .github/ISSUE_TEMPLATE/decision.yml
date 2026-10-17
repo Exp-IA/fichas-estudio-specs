@@ -1,0 +1,42 @@
+name: Decisión
+description: Una pregunta abierta que hay que resolver entre los dos.
+title: "Decisión: "
+labels: ["decisión"]
+body:
+  - type: textarea
+    id: pregunta
+    attributes:
+      label: Pregunta
+      description: Qué hay que decidir, en una o dos frases.
+    validations:
+      required: true
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto
+      description: Por qué importa y qué requerimientos (REQ-XXX) o preguntas abiertas toca.
+  - type: textarea
+    id: opciones
+    attributes:
+      label: Opciones
+      description: Las alternativas con sus pros y contras.
+      placeholder: |
+        1. Opción A: ...
+        2. Opción B: ...
+  - type: textarea
+    id: propuesta
+    attributes:
+      label: Propuesta
+      description: La opción que recomiendas, si tienes una.
+  - type: dropdown
+    id: fase
+    attributes:
+      label: Fase
+      options:
+        - MVP
+        - v2
+        - Después
+  - type: markdown
+    attributes:
+      value: |
+        Cuando se decida, registra la decisión en `docs/decisiones/` y actualiza `specs/` en el mismo pull request que cierre este issue.

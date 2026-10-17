@@ -1,0 +1,43 @@
+name: Propuesta
+description: Una funcionalidad o mejora para la aplicación.
+title: "Propuesta: "
+labels: ["propuesta"]
+body:
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema
+      description: Qué le pasa hoy al estudiante o al adulto que esta propuesta resuelve.
+    validations:
+      required: true
+  - type: textarea
+    id: propuesta
+    attributes:
+      label: Propuesta
+      description: Qué haría la app. Concreto, sin detalles de implementación.
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Criterios de aceptación
+      description: En formato Dado / Cuando / Entonces, si ya los tienes claros.
+      placeholder: |
+        Dado ...
+        Cuando ...
+        Entonces ...
+  - type: textarea
+    id: dependencias
+    attributes:
+      label: Depende de
+      description: Otros issues o requerimientos.
+  - type: dropdown
+    id: impacto
+    attributes:
+      label: Impacto estimado
+      options: [Alto, Medio, Bajo]
+  - type: dropdown
+    id: esfuerzo
+    attributes:
+      label: Esfuerzo estimado
+      options: [Alto, Medio, Bajo]

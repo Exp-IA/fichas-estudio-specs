@@ -1,0 +1,24 @@
+name: Error en la especificación
+description: Algo contradictorio, ambiguo o incompleto en specs/ o en los casos de prueba.
+title: "Error: "
+labels: ["error de especificación"]
+body:
+  - type: input
+    id: ubicacion
+    attributes:
+      label: Dónde
+      description: Archivo y requerimiento o caso de prueba.
+      placeholder: specs/01-requerimientos.md, REQ-014
+    validations:
+      required: true
+  - type: textarea
+    id: problema
+    attributes:
+      label: Qué está mal
+      description: Cita el texto y explica la contradicción o la ambigüedad.
+    validations:
+      required: true
+  - type: textarea
+    id: correccion
+    attributes:
+      label: Corrección propuesta

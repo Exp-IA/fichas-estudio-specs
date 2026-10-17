@@ -1,0 +1,90 @@
+{
+  "id": "SES",
+  "titulo": "Selección de fichas para la sesión de pendientes del día",
+  "estado": "propuesta",
+  "issue": 3,
+  "requerimientos": ["REQ-020", "REQ-024", "REQ-025"],
+  "nota": "Una ficha es pendiente si proximo_repaso es igual o anterior a hoy. Una ficha con proximo_repaso null es nueva. Las fechas son locales del dispositivo, en formato AAAA-MM-DD. El orden dentro de la sesión no se prueba aquí. Propuesta de los issues #3 y #1.",
+  "casos": [
+    {
+      "id": "SES-001",
+      "descripcion": "Una ficha que vence hoy entra; una que vence mañana no",
+      "entrada": {
+        "hoy": "2026-10-20",
+        "limite_nuevas": 0,
+        "fichas": [
+          { "id": "a", "proximo_repaso": "2026-10-20" },
+          { "id": "b", "proximo_repaso": "2026-10-21" }
+        ]
+      },
+      "esperado": { "repasos": ["a"], "cantidad_nuevas": 0 }
+    },
+    {
+      "id": "SES-002",
+      "descripcion": "Una ficha atrasada varios días entra",
+      "entrada": {
+        "hoy": "2026-10-20",
+        "limite_nuevas": 0,
+        "fichas": [
+          { "id": "a", "proximo_repaso": "2026-10-01" }
+        ]
+      },
+      "esperado": { "repasos": ["a"], "cantidad_nuevas": 0 }
+    },
+    {
+      "id": "SES-003",
+      "descripcion": "Las fichas nuevas entran hasta el límite diario",
+      "entrada": {
+        "hoy": "2026-10-20",
+        "limite_nuevas": 2,
+        "fichas": [
+          { "id": "n1", "proximo_repaso": null },
+          { "id": "n2", "proximo_repaso": null },
+          { "id": "n3", "proximo_repaso": null },
+          { "id": "n4", "proximo_repaso": null },
+          { "id": "n5", "proximo_repaso": null }
+        ]
+      },
+      "esperado": { "repasos": [], "cantidad_nuevas": 2 }
+    },
+    {
+      "id": "SES-004",
+      "descripcion": "El límite de nuevas no recorta los repasos vencidos",
+      "entrada": {
+        "hoy": "2026-10-20",
+        "limite_nuevas": 1,
+        "fichas": [
+          { "id": "a", "proximo_repaso": "2026-10-19" },
+          { "id": "b", "proximo_repaso": "2026-10-20" },
+          { "id": "n1", "proximo_repaso": null },
+          { "id": "n2", "proximo_repaso": null }
+        ]
+      },
+      "esperado": { "repasos": ["a", "b"], "cantidad_nuevas": 1 }
+    },
+    {
+      "id": "SES-005",
+      "descripcion": "Si hay menos nuevas que el límite, entran todas",
+      "entrada": {
+        "hoy": "2026-10-20",
+        "limite_nuevas": 10,
+        "fichas": [
+          { "id": "n1", "proximo_repaso": null }
+        ]
+      },
+      "esperado": { "repasos": [], "cantidad_nuevas": 1 }
+    },
+    {
+      "id": "SES-006",
+      "descripcion": "Sin fichas pendientes ni nuevas, la sesión queda vacía",
+      "entrada": {
+        "hoy": "2026-10-20",
+        "limite_nuevas": 10,
+        "fichas": [
+          { "id": "a", "proximo_repaso": "2026-11-01" }
+        ]
+      },
+      "esperado": { "repasos": [], "cantidad_nuevas": 0 }
+    }
+  ]
+}
