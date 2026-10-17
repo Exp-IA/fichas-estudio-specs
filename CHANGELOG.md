@@ -7,6 +7,7 @@ Cada implementación indica en su README contra qué versión está construida.
 - Casos de prueba compartidos para calificación (CAL) y sesión de pendientes (SES), en estado propuesta.
 - Plantillas de issue y de pull request, registro de decisiones y validación automática.
 - Contexto para herramientas de IA (`AGENTS.md`).
+- Pregunta abierta 17: qué pasa al eliminar una categoría con fichas.
 
 ## 0.1 · 2026-10-16
 
