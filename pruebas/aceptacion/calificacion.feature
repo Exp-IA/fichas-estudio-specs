@@ -39,3 +39,19 @@ Característica: Traducir la autocalificación a las calificaciones de FSRS
     Dado una ficha con tipo de calificación "escala_1_5"
     Cuando la app recibe una calificación de 6
     Entonces la app rechaza la calificación con el error "calificacion_invalida"
+
+  Esquema del escenario: Calificación que no corresponde al tipo de la ficha
+    Dado una ficha con tipo de calificación "<tipo>"
+    Cuando la app recibe la calificación <calificacion>
+    Entonces la app rechaza la calificación con el error "calificacion_invalida"
+
+    Ejemplos:
+      | caso    | tipo         | calificacion |
+      | CAL-010 | escala_1_5   | "pasa"       |
+      | CAL-011 | pasa_no_pasa | 3            |
+
+  Escenario: CAL-012 La validación va antes que el tiempo agotado
+    Dado una ficha con tipo de calificación "escala_1_5" y tiempo máximo para contestar
+    Y se agota el tiempo antes de que responda
+    Cuando la app recibe una calificación de 6
+    Entonces la app rechaza la calificación con el error "calificacion_invalida"

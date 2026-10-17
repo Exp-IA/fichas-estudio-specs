@@ -59,6 +59,24 @@
       "descripcion": "Escala 1 a 5: un valor fuera de rango es un error",
       "entrada": { "tipo_calificacion": "escala_1_5", "calificacion": 6, "tiempo_agotado": false },
       "esperado": { "error": "calificacion_invalida" }
+    },
+    {
+      "id": "CAL-010",
+      "descripcion": "Escala 1 a 5: \"pasa\" no corresponde al tipo de la ficha y es un error",
+      "entrada": { "tipo_calificacion": "escala_1_5", "calificacion": "pasa", "tiempo_agotado": false },
+      "esperado": { "error": "calificacion_invalida" }
+    },
+    {
+      "id": "CAL-011",
+      "descripcion": "Pasa / No pasa: un número no corresponde al tipo de la ficha y es un error",
+      "entrada": { "tipo_calificacion": "pasa_no_pasa", "calificacion": 3, "tiempo_agotado": false },
+      "esperado": { "error": "calificacion_invalida" }
+    },
+    {
+      "id": "CAL-012",
+      "descripcion": "Una calificación inválida es un error aunque se haya agotado el tiempo",
+      "entrada": { "tipo_calificacion": "escala_1_5", "calificacion": 6, "tiempo_agotado": true },
+      "esperado": { "error": "calificacion_invalida" }
     }
   ]
 }
