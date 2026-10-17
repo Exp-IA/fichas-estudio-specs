@@ -34,6 +34,7 @@ La lógica (requerimientos, datos, sesiones) y la interfaz (diseño, colores, ma
 |---|---|
 | `decisión` | Pregunta abierta que hay que resolver entre los dos |
 | `funcionalidad` | Funcionalidad propuesta para la especificación |
+| `propuesta` | Mejora para diferenciar la app, surgida del análisis de competencia |
 | `fase: MVP` / `fase: v2` / `fase: después` | Prioridad propuesta en el análisis |
 
 ## Implementaciones
