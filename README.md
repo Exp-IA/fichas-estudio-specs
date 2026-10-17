@@ -6,7 +6,7 @@ Aquí solo hay especificaciones, no código. La idea es que cada persona impleme
 
 ## Origen
 
-Reto de desarrollo cruzado acordado entre Jorge Johnson y Sergio Monsalve el 16 de octubre de 2026. La aplicación de referencia es la que Jorge construyó para su sobrino.
+Reto de desarrollo cruzado acordado entre Jorge Johnson y Sergio Monsalve el 16 de octubre de 2026. La aplicación de referencia es la que Jorge construyó para un niño en edad escolar.
 
 ## Estructura
 

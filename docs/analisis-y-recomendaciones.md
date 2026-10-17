@@ -79,7 +79,7 @@ Para la versión TypeScript existe [ts-fsrs](https://cdn.jsdelivr.net/npm/ts-fsr
 
 ### Pedagogía infantil
 
-El usuario inicial es el sobrino de Jorge, así que la app debe funcionar para un niño:
+El usuario inicial es un niño en edad escolar, así que la app debe funcionar para él:
 
 - Sesiones cortas por defecto y un final claro ("terminaste por hoy").
 - Imágenes y audio en preguntas y respuestas; leer en voz alta la pregunta ayuda si el niño aún lee despacio.
