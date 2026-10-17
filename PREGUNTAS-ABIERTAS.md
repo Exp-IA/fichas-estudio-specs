@@ -29,3 +29,7 @@ Decisiones pendientes. Cuando se resuelva una, se pasa al documento de especific
 ## Registro
 
 16. ¿Qué datos se muestran en el resumen de sesión y en el historial (aciertos, promedio, tiempo, fichas más difíciles)?
+
+## Eliminación
+
+17. ¿Qué pasa al eliminar una categoría que tiene fichas (REQ-012)? Las opciones son borrar en cascada (fichas e historial), bloquear hasta que se muevan o borren las fichas, o borrar en cascada después de una confirmación. Propuesta: bloquear, para que un niño no pierda su progreso con un toque. Esto implica que la interfaz ofrezca mover fichas a otra categoría. Al eliminar una subcategoría, ¿sus fichas quedan en la categoría o se borran?
