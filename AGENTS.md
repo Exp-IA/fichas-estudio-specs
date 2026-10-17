@@ -16,6 +16,7 @@ El primer usuario es un niño en edad escolar.
 | `specs/02-modelo-de-datos.md` | Entidades y campos |
 | `specs/03-sesiones-y-repeticion.md` | Flujo de sesión y reglas de aparición |
 | `specs/04-interfaz.md` | Pantallas, separadas de la lógica |
+| `specs/05-generador.md` | Borrador: generador de plan y fichas, sistema aparte de la app |
 | `PREGUNTAS-ABIERTAS.md` | Lo que no está decidido |
 | `pruebas/aceptacion/*.feature` | Criterios de aceptación en Gherkin, en español |
 | `pruebas/casos/*.json` | Los mismos criterios como entradas y salidas esperadas |
