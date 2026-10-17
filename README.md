@@ -17,6 +17,7 @@ Reto de desarrollo cruzado acordado entre Jorge Johnson y Sergio Monsalve el 16 
 | [`specs/03-sesiones-y-repeticion.md`](specs/03-sesiones-y-repeticion.md) | Flujo de una sesión y reglas de aparición de fichas |
 | [`specs/04-interfaz.md`](specs/04-interfaz.md) | Especificación de interfaz, separada de la lógica |
 | [`PREGUNTAS-ABIERTAS.md`](PREGUNTAS-ABIERTAS.md) | Decisiones pendientes |
+| [`docs/analisis-y-recomendaciones.md`](docs/analisis-y-recomendaciones.md) | Análisis de apps similares y recomendaciones |
 
 La lógica (requerimientos, datos, sesiones) y la interfaz (diseño, colores, marca) van en documentos distintos, para poder evaluar implementaciones de cada parte por separado.
 
@@ -25,6 +26,15 @@ La lógica (requerimientos, datos, sesiones) y la interfaz (diseño, colores, ma
 1. Cada cambio a una especificación va en un pull request con una descripción corta de qué cambia y por qué.
 2. Los requerimientos se identifican como `REQ-XXX`. No se reutilizan identificadores; un requerimiento que se elimina se marca como retirado.
 3. Lo que no esté decidido va a `PREGUNTAS-ABIERTAS.md`, no se asume en los documentos de especificación.
+4. Cada decisión pendiente y cada funcionalidad propuesta tiene un issue. Se discute en el issue, se asigna a quien la va a resolver y se cierra con el pull request que actualiza `specs/`.
+
+### Etiquetas
+
+| Etiqueta | Uso |
+|---|---|
+| `decisión` | Pregunta abierta que hay que resolver entre los dos |
+| `funcionalidad` | Funcionalidad propuesta para la especificación |
+| `fase: MVP` / `fase: v2` / `fase: después` | Prioridad propuesta en el análisis |
 
 ## Implementaciones
 
