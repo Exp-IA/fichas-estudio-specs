@@ -1,0 +1,84 @@
+{
+  "id": "SEL",
+  "titulo": "Selección de fichas para una sesión manual",
+  "estado": "propuesta",
+  "requerimientos": ["REQ-021", "REQ-022", "REQ-023"],
+  "nota": "El orden es aleatorio (REQ-023), así que los casos no fijan cuáles fichas salen: la implementación debe devolver exactamente `cantidad` fichas, todas dentro de `elegibles` y sin repetir. Cuando `cantidad` es igual al número de elegibles, entran todas. Cada implementación prueba por su cuenta que el orden cambia y que, al recortar, no entran siempre las mismas. Una ficha es elegible si su categoría está elegida o si su subcategoría está elegida (la unión).",
+  "casos": [
+    {
+      "id": "SEL-001",
+      "descripcion": "Entran las fichas de las categorías elegidas",
+      "entrada": {
+        "fichas": [
+          { "id": "m1", "categoria": "mate", "subcategoria": "fracciones" },
+          { "id": "m2", "categoria": "mate", "subcategoria": null },
+          { "id": "c1", "categoria": "ciencias", "subcategoria": "planetas" }
+        ],
+        "categorias": ["mate"],
+        "subcategorias": [],
+        "cantidad": 10
+      },
+      "esperado": { "elegibles": ["m1", "m2"], "cantidad": 2 }
+    },
+    {
+      "id": "SEL-002",
+      "descripcion": "Una subcategoría elegida suma sus fichas aunque su categoría no esté elegida, sin repetir",
+      "entrada": {
+        "fichas": [
+          { "id": "m1", "categoria": "mate", "subcategoria": "fracciones" },
+          { "id": "m2", "categoria": "mate", "subcategoria": null },
+          { "id": "c1", "categoria": "ciencias", "subcategoria": "planetas" },
+          { "id": "c2", "categoria": "ciencias", "subcategoria": "animales" }
+        ],
+        "categorias": ["mate"],
+        "subcategorias": ["planetas", "fracciones"],
+        "cantidad": 10
+      },
+      "esperado": { "elegibles": ["m1", "m2", "c1"], "cantidad": 3 }
+    },
+    {
+      "id": "SEL-003",
+      "descripcion": "No entran más fichas que las pedidas",
+      "entrada": {
+        "fichas": [
+          { "id": "m1", "categoria": "mate", "subcategoria": null },
+          { "id": "m2", "categoria": "mate", "subcategoria": null },
+          { "id": "m3", "categoria": "mate", "subcategoria": null },
+          { "id": "m4", "categoria": "mate", "subcategoria": null },
+          { "id": "m5", "categoria": "mate", "subcategoria": null }
+        ],
+        "categorias": ["mate"],
+        "subcategorias": [],
+        "cantidad": 2
+      },
+      "esperado": { "elegibles": ["m1", "m2", "m3", "m4", "m5"], "cantidad": 2 }
+    },
+    {
+      "id": "SEL-004",
+      "descripcion": "Si hay menos fichas que las pedidas, entran todas (pregunta abierta 14)",
+      "entrada": {
+        "fichas": [
+          { "id": "h1", "categoria": "historia", "subcategoria": null },
+          { "id": "m1", "categoria": "mate", "subcategoria": null }
+        ],
+        "categorias": ["historia"],
+        "subcategorias": [],
+        "cantidad": 10
+      },
+      "esperado": { "elegibles": ["h1"], "cantidad": 1 }
+    },
+    {
+      "id": "SEL-005",
+      "descripcion": "Sin fichas en lo elegido, la sesión queda vacía",
+      "entrada": {
+        "fichas": [
+          { "id": "m1", "categoria": "mate", "subcategoria": null }
+        ],
+        "categorias": ["historia"],
+        "subcategorias": [],
+        "cantidad": 10
+      },
+      "esperado": { "elegibles": [], "cantidad": 0 }
+    }
+  ]
+}
