@@ -16,6 +16,7 @@ Reto de desarrollo cruzado acordado entre Jorge Johnson y Sergio Monsalve el 16 
 | [`specs/02-modelo-de-datos.md`](specs/02-modelo-de-datos.md) | Entidades y relaciones |
 | [`specs/03-sesiones-y-repeticion.md`](specs/03-sesiones-y-repeticion.md) | Flujo de una sesión y reglas de aparición de fichas |
 | [`specs/04-interfaz.md`](specs/04-interfaz.md) | Especificación de interfaz, separada de la lógica |
+| [`specs/05-generador.md`](specs/05-generador.md) | Borrador del generador de plan de estudio y fichas |
 | [`PREGUNTAS-ABIERTAS.md`](PREGUNTAS-ABIERTAS.md) | Decisiones pendientes |
 | [`docs/analisis-y-recomendaciones.md`](docs/analisis-y-recomendaciones.md) | Análisis de apps similares y recomendaciones |
 | [`pruebas/`](pruebas/) | Casos de prueba compartidos que las dos implementaciones deben pasar |
