@@ -4,6 +4,7 @@ Cada implementación indica en su README contra qué versión está construida.
 
 ## Sin publicar
 
+- Propuesta de diseño visual ("Cuaderno cálido") en `specs/04-interfaz.md`, con capturas en `specs/referencias/`.
 - Casos de prueba compartidos para calificación (CAL) y sesión de pendientes (SES), en estado propuesta.
 - Plantillas de issue y de pull request, registro de decisiones y validación automática.
 - Contexto para herramientas de IA (`AGENTS.md`).
